@@ -25,18 +25,6 @@ public class MainActivity extends AppCompatActivity {
 
         getImage.setOnClickListener(new GetImageOnClickListener(this));
 
-//        getImage.setOnClickListener(new View.OnClickListener() {
-//                    @Override
-//                    public void onClick(View v) {
-//                        AsyncFlickrJSONData getImg = new AsyncFlickrJSONData();
-//                        AsyncBitmapDownloader downloadImg = new AsyncBitmapDownloader(image);
-////                        img.doInBackground();
-////                        getImg.execute("https://www.flickr.com/services/feeds/photos_public.gne?tags=trees&format=json");
-//                        downloadImg.execute();
-////                        image.setImageBitmap(downloadImg.onPostExecute());
-//                    }
-//                }
-        //);
     }
 
     public void viewList(View view) {
@@ -44,6 +32,4 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-
-//    public void downloadImage(View view) { }
 }

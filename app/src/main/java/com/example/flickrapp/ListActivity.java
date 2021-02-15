@@ -19,6 +19,7 @@ public class ListActivity extends AppCompatActivity {
         list = (ListView) findViewById(R.id.list);
         adapter = new MyAdapter(ListActivity.this);
 
+//        init AsyncTask and pass the adapter to get the imgage urls
         asyList = new AsyncFlickrJSONDataForList(adapter);
         asyList.execute("https://www.flickr.com/services/feeds/photos_public.gne?tags=trees&format=json");
         list.setAdapter(adapter);

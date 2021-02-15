@@ -25,8 +25,6 @@ public class MyAdapter extends BaseAdapter {
 
     Vector<String> urls = new Vector<String>();
     Context context;
-//    LayoutInflater inflter;
-
 
     public MyAdapter(Context context){
         this.context = context;
@@ -53,7 +51,7 @@ public class MyAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        Log.i("MELO", "todo dodododoooo");
+//        Log.i("MELO", "to do dodododoooo");
         RecyclerView.ViewHolder holder;
 
         if(convertView == null){
@@ -61,7 +59,7 @@ public class MyAdapter extends BaseAdapter {
             convertView = LayoutInflater.from(context).inflate(R.layout.bitmaplayout, null);
         }
 
-        TextView txt = (TextView) convertView.findViewById(R.id.txt);
+//        TextView txt = (TextView) convertView.findViewById(R.id.txt);
         ImageView img = (ImageView) convertView.findViewById(R.id.image);
 
         String i = (String) getItem(position);
@@ -75,6 +73,7 @@ public class MyAdapter extends BaseAdapter {
         Response.Listener<Bitmap> rep_listener = response -> {
             img.setImageBitmap(response);
         };
+
         ImageRequest request = new ImageRequest(
                 i, rep_listener, 50,
                 70, ImageView.ScaleType.CENTER , Bitmap.Config.RGB_565, null);

@@ -66,14 +66,15 @@ public class AsyncFlickrJSONDataForList extends AsyncTask<String, Void, JSONObje
         try {
             JSONArray urls = jsonObject.getJSONArray("items");
 
-//            for(JSONArray i: urls){
+//            get all the image urls
             for(int i=0;i<urls.length();i++){
+
                 JSONObject arr = urls.getJSONObject(i);
                 String url = arr.getJSONObject("media").getString("m");
-                adp.dd(url);
-                Log.i("URL", "Added to adapter url : " + url);
-                adp.notifyDataSetChanged();
-//                setAdapter(adapter)
+
+                adp.dd(url); // add them to the adapter
+//                Log.i("URL", "Added to adapter url : " + url);
+                adp.notifyDataSetChanged(); // notify the adapter when a new image url is added
             }
 
         } catch (JSONException e) {

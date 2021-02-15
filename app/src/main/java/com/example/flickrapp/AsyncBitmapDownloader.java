@@ -23,8 +23,7 @@ public class AsyncBitmapDownloader extends AsyncTask<String, Void, Bitmap> {
     ImageView image;
     private MainActivity act;
 
-//    public AsyncBitmapDownloader(){}
-//
+
     public AsyncBitmapDownloader(MainActivity act){
         this.act = act;
     }
@@ -32,11 +31,11 @@ public class AsyncBitmapDownloader extends AsyncTask<String, Void, Bitmap> {
     @Override
     protected Bitmap doInBackground(String... strings) {
 
-        URL url = null;
+        URL url;
         try {
+            // download image from given url
             url = new URL(strings[0]);
             HttpURLConnection urlConn = (HttpURLConnection) url.openConnection();
-
 
             InputStream in = new BufferedInputStream(urlConn.getInputStream());
             bitmap = BitmapFactory.decodeStream(in);
@@ -52,6 +51,7 @@ public class AsyncBitmapDownloader extends AsyncTask<String, Void, Bitmap> {
     protected void onPostExecute(Bitmap bitmap) {
         super.onPostExecute(bitmap);
 
+//        set ImageView after download is complete
         ImageView image = act.findViewById(R.id.image);
         image.setImageBitmap(bitmap);
 

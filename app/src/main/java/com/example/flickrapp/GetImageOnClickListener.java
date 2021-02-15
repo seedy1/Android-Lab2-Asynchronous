@@ -2,6 +2,7 @@ package com.example.flickrapp;
 
 import android.view.View;
 
+// custom get click listener for getImage
 public class GetImageOnClickListener implements View.OnClickListener {
     MainActivity act;
     public GetImageOnClickListener(MainActivity act){
