@@ -64,11 +64,12 @@ public class AsyncFlickrJSONData extends AsyncTask<String, Void, JSONObject> {
 
         try {
             String imgPath = jsonObject.getJSONArray("items").getJSONObject(1).getJSONObject("media").getString("m");
+
+            // pass image string to Async image downloader class
             AsyncBitmapDownloader download = new AsyncBitmapDownloader(act);
             download.execute(imgPath);
 
 //            Log.i("OBJ", imgPath);
-
         } catch (JSONException e) {
             e.printStackTrace();
         }

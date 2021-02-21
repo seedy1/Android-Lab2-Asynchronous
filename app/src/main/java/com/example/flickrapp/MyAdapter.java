@@ -63,10 +63,7 @@ public class MyAdapter extends BaseAdapter {
         ImageView img = (ImageView) convertView.findViewById(R.id.image);
 
         String i = (String) getItem(position);
-        Log.i("III", "i is "+i);
-
-//        RequestQueue queue = MySingleton.getInstance(viewGroup.getContext()).
-//                getRequestQueue();
+//        Log.i("III", "i is "+i);
 
         // Get a RequestQueue
         RequestQueue queue = MySingleton.getInstance(context).getRequestQueue();
